@@ -16,7 +16,10 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+<<<<<<< HEAD
     "@svgr/webpack": "^8.1.0",
+=======
+>>>>>>> 15e047c4a90b3d6f82400500e0a4b4d5a637bdcc
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
