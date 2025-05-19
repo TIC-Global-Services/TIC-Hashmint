@@ -62,7 +62,7 @@ const Stats: React.FC = () => {
 
   return (
     <div className="flex justify-center items-center w-full  min-h-[400px] bg-gradient-to-b from-black to-gray-900 text-white px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-      <div className="flex w-full max-w-6xl justify-between gap-6 max-md:flex-col max-md:gap-8">
+      <div className="flex w-full px-4  md:px-10 justify-between gap-6 max-md:flex-col max-md:gap-8">
         {/* Stat 1 */}
         <motion.div
           className="flex flex-col items-start w-1/4 max-md:w-full"

@@ -71,7 +71,7 @@ const Navbar: React.FC = () => {
   return (
     <div className="fixed top-0 left-0 right-0 z-50 w-screen">
       <motion.nav
-        className="w-full   "
+        className="w-full"
         initial="visible"
         animate={isVisible ? "visible" : "hidden"}
         variants={navbarVariants}
@@ -141,7 +141,7 @@ const Navbar: React.FC = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="md:hidden bg-white w-[90%] mx-auto rounded-xl"
+            className="md:hidden bg-white/80 bg-clip-padding backdrop-filter backdrop-blur-sm  backdrop-saturate-100 backdrop-contrast-100 w-[90%] mx-auto rounded-3xl mt-2"
             initial="closed"
             animate="open"
             exit="closed"
@@ -175,7 +175,7 @@ const Navbar: React.FC = () => {
                 className="px-3 py-2"
               >
                 <PrimaryLinkButton
-                  href="/contact"
+                  href="/#contact"
                   onClick={() => setIsOpen(false)}
                   className="w-full bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-4 rounded-full text-center"
                 >

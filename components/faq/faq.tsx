@@ -11,7 +11,7 @@ const FAQAccordion: React.FC = () => {
     {
       id: 1,
       question: "Why Choose a Paper-Free Approach?",
-      answer: "Exceptionally secure. We use strong encryption protocols for data both at rest and in transit, backed by strict access controls and rigorous data protection policies."
+      answer: "There’s nothing more powerful than students striving wholeheartedly to shape the future they envision. Supporting that journey means removing barriers and inefficiencies. It calls for a smarter alternative—an integrated, tech-driven solution that manages, monitors, evaluates, and enhances the entire examination process, delivering a seamless and elevated experience."
     },
     {
       id: 2,
@@ -21,12 +21,12 @@ const FAQAccordion: React.FC = () => {
     {
       id: 3,
       question: "Think Traditional Exams Are More Affordable?",
-      answer: "Exceptionally secure. We use strong encryption protocols for data both at rest and in transit, backed by strict access controls and rigorous data protection policies."
+      answer: "What if we told you that a fully digital exam could cost less than ₹50 per student—including both CapEx and OpEx? Sounds unbelievable? It’s possible because we’ve optimized our products and processes. By streamlining operations and cutting inefficiencies, we pass every cost-saving benefit directly to you—making digital exams accessible and affordable for everyone."
     },
     {
       id: 4,
       question: "Students Are So Used to Paper—How Will They Adapt to the Change?",
-      answer: "Exceptionally secure. We use strong encryption protocols for data both at rest and in transit, backed by strict access controls and rigorous data protection policies."
+      answer: "Our Hashmint exam surface is specifically designed to mimic the feel of paper. In fact, we’ve received excellent feedback from students who say it feels just like writing on paper."
     }
   ];
   
@@ -69,7 +69,7 @@ const FAQAccordion: React.FC = () => {
               )}
               
               <button 
-                className="w-full text-left py-4 pr-10 pl-8 flex items-center justify-between relative"
+                className="w-full text-left py-4 pr-10 cursor-pointer pl-8 flex items-center justify-between relative"
                 onClick={() => toggleFAQ(item.id)}
                 aria-expanded={openFAQ === item.id}
               >
