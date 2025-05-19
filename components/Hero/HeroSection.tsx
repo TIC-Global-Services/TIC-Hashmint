@@ -1,37 +1,72 @@
 "use client";
-import React from 'react';
-import Image from 'next/image';
+import React from "react";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import Link from "next/link";
 
 const Hero: React.FC = () => {
+  // Animation variants for heading and button
+  const contentVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
+  };
+
   return (
-    <main className="relative h-[calc(100vh-80px)] w-full overflow-hidden">
+    <main className="relative h-[120dvh] w-full overflow-hidden">
+
+      <Link
+        href="/Hashmint Exams - Brochure.pdf"
+        download
+        className="absolute right-0 top-2/3 -translate-y-1/2 bg-[var(--primary)] text-[var(--foreground)] py-4 px-2 flex flex-col items-center justify-center cursor-pointer rounded-l-lg shadow-lg z-50" // Added z-50 to ensure it's above other content
+      >
+        <span className="[writing-mode:vertical-rl] rotate-180 text-sm font-semibold">
+          Download Brochure
+        </span>
+      </Link>
+      {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <Image
           src="/hero/HERO.avif"
-          alt="Background"
+          alt="Students in a classroom using tablets for paperless exams"
           fill
           priority
+          quality={85}
+          sizes="100vw"
           className="object-cover"
-          role="presentation"
         />
+        {/* Overlay for text contrast */}
+        <div className="absolute inset-0 bg-black/20" aria-hidden="true" />
       </div>
-      
-      <div className="relative flex flex-col h-full justify-end pb-20">
-        <section className="flex flex-col items-start px-16 max-md:px-4">
-          <h1 className="text-6xl font-semibold tracking-tight text-white max-md:text-4xl">
-            Introducing Paperless Exams
-            <br />
-            <span className="leading-tight">Reimagining the future of exams</span>
-          </h1>
-          <button
-            className="overflow-hidden px-7 py-3.5 mt-11 text-base font-semibold leading-none
-              text-[var(--foreground)]  bg-[var(--primary)]  rounded-[68px] transition-transform
-              hover:bg-[var(--primary)] focus:outline-none focus:ring-2 focus:ring-[var(--primary)] 
-              active:scale-95 max-md:px-5 max-md:mt-6"
+
+      {/* Content */}
+      <div className="relative h-full flex items-end pb-16 sm:pb-20">
+        <motion.section
+          className="flex flex-col items-start px-6 sm:px-16 lg:px-20 "
+          initial="hidden"
+          animate="visible"
+          variants={contentVariants}
+        >
+          <motion.h1
+            className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white "
+            variants={contentVariants}
           >
-            Book a Demo
-          </button>
-        </section>
+            Introducing Paperless Exams <br /> Reimagining the Future of Exams
+
+          </motion.h1>
+          <motion.div className="mt-6 sm:mt-8" variants={contentVariants}>
+            <Link
+              href="/#contact"
+              className="inline-block px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg font-semibold text-black bg-yellow-400 rounded-full transition-all hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-400/50 active:scale-95"
+              aria-label="Book a demo for paperless exams"
+            >
+              Book a Demo
+            </Link>
+          </motion.div>
+        </motion.section>
       </div>
     </main>
   );

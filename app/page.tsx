@@ -4,17 +4,19 @@ import Stats from "@/components/services/stats";
 import Testimonials from "@/components/Testimonials/Testimonials"
 import Services from "@/components/services/service";
 import FAQAccordion from "@/components/faq/faq"
+import PaperFreeHero from "@/components/PaperFee/PaperFreeSection";
+import Form from "@/components/ContactForm/Form";
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
-      <main className="flex-1">
-        <Hero />
-        <About />
-        <Services />
-        <Stats />
-        <Testimonials />
-        <FAQAccordion />
-      </main>
+    <div className=" overflow-x-hidden">
+      <Hero />
+      <About />
+      <Services />
+      <Stats />
+      <Testimonials />
+      <FAQAccordion />
+      <PaperFreeHero />
+      <Form />
     </div>
   );
 }

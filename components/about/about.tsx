@@ -1,75 +1,155 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import Link from "next/link";
 
 const Section: React.FC = () => {
+  const [count, setCount] = useState(0);
+
+  // Counting animation for the "60%" number
+  useEffect(() => {
+    const target = 60;
+    const duration = 2000; // 2 seconds
+    const increment = target / (duration / 50); // Increment every 50ms
+
+    const counter = setInterval(() => {
+      setCount((prev) => {
+        if (prev >= target) {
+          clearInterval(counter);
+          return target;
+        }
+        return prev + increment;
+      });
+    }, 50);
+
+    return () => clearInterval(counter);
+  }, []);
+
+  // Animation variants for text and button
+  const contentVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
+  };
+
   return (
-    <section className="flex overflow-hidden flex-col items-center">
-      <hr className="flex self-stretch w-full border border-dashed border-teal-950 border-opacity-60 min-h-0.5 max-md:max-w-full" />
+    <section id="about-us" className="flex flex-col items-center py-16 bg-gray-50">
+      
 
-      <div className="mt-32 w-full max-w-[1257px] max-md:mt-10 max-md:max-w-full max-sm:px-5 gap-[168]">
-        <div className="flex gap-5 max-md:flex-col">
-          <header className="w-[29%] max-md:ml-0 max-md:w-full">
-            <h1 className="mt-3 text-3xl font-medium leading-7 text-black uppercase max-md:mt-10">
+      {/* Header and Description */}
+      <div className="mt-16 w-full px-8 sm:px-6 lg:px-20 max-md:mt-10">
+        <div className="flex gap-10 max-md:flex-col">
+          <motion.header
+            className="w-1/3 max-md:w-full"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={contentVariants}
+          >
+            <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight text-teal-950 uppercase max-md:mt-8">
               Meet Hashmint Exams
-              <br />
             </h1>
-          </header>
+          </motion.header>
 
-          <article className="ml-5 w-[71%] max-md:ml-0 max-md:w-full">
-            <p className="text-2xl tracking-tight leading-9 text-black max-md:mt-10 max-md:max-w-full max-sm:text-center">
+          <motion.article
+            className="w-2/3 max-md:w-full"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={contentVariants}
+          >
+            <p className="text-xl sm:text-2xl tracking-tight leading-8 text-teal-950 max-md:mt-6">
               Tailored for high-stakes assessments, Hashmint redefines the
               traditional pen-and-paper exam experience. Featuring a
               custom-built operating system and redundant storage systems,
               Hashmint ensures unmatched reliability and security for critical
               exams.
-              <br />
             </p>
-            <button className="overflow-hidden px-7 py-3.5 mt-9 text-base font-semibold leading-none text-black bg-[var(--primary)]  rounded-[68px] w-[163px] max-md:px-5">
-              Get Started
-            </button>
-          </article>
+            <motion.div
+              className="mt-8"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={contentVariants}
+            >
+              <Link
+                href="/#get-started"
+                className="inline-block px-7 py-3.5 text-base font-semibold text-black bg-yellow-400 rounded-full transition-all hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-400/50 active:scale-95"
+                aria-label="Get started with Hashmint Exams"
+              >
+                Get Started
+              </Link>
+            </motion.div>
+          </motion.article>
         </div>
       </div>
 
-      <div className="mt-16 w-full max-w-[1297px] max-md:mt-10 max-md:max-w-full" >
-        <div className="flex gap-5 max-md:flex-col">
-          <div className="w-[33%] max-md:ml-0 max-md:w-full">
-            <div className="max-md:mt-10">
-              <hr className="flex shrink-0 h-px border border-dashed border-teal-950 border-opacity-30" />
-              <article className="flex flex-col mt-7 max-w-full w-[287px] max-sm:px-5">
-                <h2 className="self-start text-8xl tracking-tighter leading-none text-[var(--primary)]  max-md:text-4xl max-sm:self-stretch max-sm:text-9xl">
-                  60%
-                </h2>
-                <p className="mt-10 text-xl tracking-tight leading-6 text-black">
-                  More Time in Manual Grading than Automated Digital Assessments
-                </p>
-              </article>
-            </div>
-          </div>
+      {/* Stats and Images */}
+      <div className="mt-16 w-full  px-8 sm:px-6 lg:px-20 max-md:mt-10">
+        <div className="flex gap-8 max-md:flex-col">
+          {/* Stats */}
+          <motion.div
+            className="w-1/3 max-md:w-full"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={contentVariants}
+          >
+            <hr className="w-full border border-dashed border-teal-950 border-opacity-30" />
+            <article className="flex flex-col mt-7 max-w-full">
+              <h2 className="text-7xl sm:text-8xl font-bold tracking-tighter text-yellow-400 ">
+                {Math.round(count)}%
+              </h2>
+              <p className="mt-6 text-lg sm:text-xl tracking-tight leading-6 text-teal-950">
+                More Time in Manual Grading than Automated Digital Assessments
+              </p>
+            </article>
+          </motion.div>
 
-          <div className="ml-10 w-[33%] max-md:ml-0 max-md:w-full">
-            <div className="relative aspect-square overflow-hidden rounded-2xl max-md:mt-10 max-md:max-w-full max-sm:m-5 max-sm:rounded">
-               <Image
-          src="/about/about-img-1.png"
-          alt="Feature illustration"
-          fill
-          className="object-cover"
-        />
+          {/* Image 1 */}
+          <motion.div
+            className="w-1/3 max-md:w-full"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={contentVariants}
+          >
+            <div className="relative aspect-square overflow-hidden rounded-2xl shadow-lg">
+              <Image
+                src="/about/about-img-1.png"
+                alt="Illustration of Hashmint's exam technology"
+                fill
+                quality={80}
+                sizes="(max-width: 768px) 100vw, 33vw"
+                className="object-cover"
+              />
             </div>
-          </div>
+          </motion.div>
 
-          <div className="ml-5 w-[33%] max-md:ml-0 max-md:w-full">
-            <div className="relative aspect-square overflow-hidden rounded-2xl  max-md:mt-10 max-sm:m-5">
-            <Image
-          src="/about/about-img-2.png"
-          alt="Feature illustration"
-          fill
-          className="object-cover"
-        />
+          {/* Image 2 */}
+          <motion.div
+            className="w-1/3 max-md:w-full"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={contentVariants}
+          >
+            <div className="relative aspect-square overflow-hidden rounded-2xl shadow-lg">
+              <Image
+                src="/about/about-img-2.png"
+                alt="Illustration of secure exam systems"
+                fill
+                quality={80}
+                sizes="(max-width: 768px) 100vw, 33vw"
+                className="object-cover"
+              />
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

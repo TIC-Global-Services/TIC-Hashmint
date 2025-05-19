@@ -41,7 +41,7 @@ const FAQAccordion: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row w-full">
+    <div id='faq' className="flex flex-col md:flex-row w-full">
       {/* Left side image */}
       <div className="w-full md:w-1/2 h-[350px] md:h-[100vh] relative">
         <Image

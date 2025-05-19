@@ -27,10 +27,10 @@ const PrimaryLinkButton: React.FC<PrimaryLinkButtonProps> = ({
       target={target}
       className={`
         inline-flex items-center justify-center gap-2
-        px-4 py-2 rounded-md
-        bg-[var(--color-primary)]
-        text-white font-medium
-        hover:bg-[var(--color-primary-hover)]
+        px-4 py-2 rounded-full
+        bg-[var(--primary)]
+        text-black font-bold
+        hover:bg-[var(--primary)]/80
         transition-colors duration-200 ease-in-out
         ${className}
       `}

@@ -52,7 +52,7 @@ const Testimonials: React.FC = () => {
   ];
 
   // Create a duplicated array for infinite scrolling
-  const testimonialsExtended = [...testimonialData, ...testimonialData, ...testimonialData];
+  const testimonialsExtended = [...testimonialData, ...testimonialData, ...testimonialData, ...testimonialData, ...testimonialData, ...testimonialData];
   
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);

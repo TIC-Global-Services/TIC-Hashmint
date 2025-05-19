@@ -3,6 +3,7 @@ import "./globals.css";
 import NavBar from "@/components/Reusable/NavBar";
 import Footer from "@/components/Reusable/Footer";
 import Hero from "@/components/Hero/HeroSection";
+import Link from "next/link";
 
 
 
@@ -21,7 +22,7 @@ export default function RootLayout({
 
       <body>
         <NavBar />
-        <Hero />
+       
         {children}
         <Footer />
       </body>
