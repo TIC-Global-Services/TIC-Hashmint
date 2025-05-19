@@ -7,17 +7,10 @@ const Navbar: React.FC = () => {
   const menuItems = ['Home', 'about us', 'Features', "FAQ's", 'Contact'];
 
   return (
-<<<<<<< HEAD
     <div
       className="flex relative flex-wrap gap-5 justify-between items-center self-stretch px-14 w-full
         border border-solid bg-white bg-opacity-80 border-teal-950 border-opacity-10 rounded-[66px]
         max-md:px-5 max-md:max-w-full "
-=======
-    <header
-      className="flex relative flex-wrap gap-5 justify-between items-center self-stretch px-14 w-full
-        border border-solid bg-white bg-opacity-80 border-teal-950 border-opacity-10 rounded-[66px]
-        max-md:px-5 max-md:max-w-full"
->>>>>>> 15e047c4a90b3d6f82400500e0a4b4d5a637bdcc
     >
     <Image
       src="/logo.svg"
@@ -27,12 +20,8 @@ const Navbar: React.FC = () => {
       priority
       className="object-contain"
     />
-<<<<<<< HEAD
      {/* <Hashmint_Logo width={150} height={40} className="object-contain" /> */}
       <div className="flex gap-5 self-stretch my-auto text-lg font-medium tracking-tight leading-loose text-teal-950">
-=======
-      <nav className="flex gap-5 self-stretch my-auto text-lg font-medium tracking-tight leading-loose text-teal-950">
->>>>>>> 15e047c4a90b3d6f82400500e0a4b4d5a637bdcc
         {menuItems.map((item) => (
           <a
             key={item}
@@ -43,28 +32,16 @@ const Navbar: React.FC = () => {
             {item}
           </a>
         ))}
-<<<<<<< HEAD
       </div>
       <button
         className="overflow-hidden px-7 py-3.5 my-auto text-base font-semibold leading-none
           text-foreground bg-[var(--primary)] rounded-[68px] transition-transform
           hover:bg-[var(--primary)]/80 focus:outline-none focus:ring-2 focus:ring-[var(--primary)] 
-=======
-      </nav>
-      <button
-        className="overflow-hidden px-7 py-3.5 my-auto text-base font-semibold leading-none
-          text-foreground bg-primary rounded-[68px] transition-transform
-          hover:bg-primary/80 focus:outline-none focus:ring-2 focus:ring-primary
->>>>>>> 15e047c4a90b3d6f82400500e0a4b4d5a637bdcc
           active:scale-95 max-md:px-5"
       >
         Book a Demo
       </button>
-<<<<<<< HEAD
     </div>
-=======
-    </header>
->>>>>>> 15e047c4a90b3d6f82400500e0a4b4d5a637bdcc
   );
 };
 
