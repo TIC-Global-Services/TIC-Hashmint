@@ -55,7 +55,7 @@ const FAQAccordion: React.FC = () => {
 
       {/* Right side FAQs */}
       <div className="w-full md:w-1/2 bg-black text-white px-8 py-12 md:px-12 md:py-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12">FAQ's</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-12">FAQ&apos;s</h2>
         
         <div className="space-y-0">
           {faqItems.map((item, index) => (

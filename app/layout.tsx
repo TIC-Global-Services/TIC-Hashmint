@@ -2,9 +2,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 import NavBar from "@/components/Reusable/NavBar";
 import Footer from "@/components/Reusable/Footer";
-import Hero from "@/components/Hero/HeroSection";
-import Link from "next/link";
-
 
 
 export const metadata: Metadata = {
