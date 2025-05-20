@@ -99,11 +99,11 @@ const Testimonials: React.FC = () => {
   const currentPage = ((currentSlide % totalSlides) + totalSlides) % totalSlides + 1;
 
   // Display stars based on rating
-  const renderStars = (count: number) => {
-    return Array(5).fill(0).map((_, i) => (
-      <span key={i} className={`text-xl ${i < count ? 'text-orange-500' : 'text-gray-300'}`}>★</span>
-    ));
-  };
+  // const renderStars = (count: number) => {
+  //   return Array(5).fill(0).map((_, i) => (
+  //     <span key={i} className={`text-xl ${i < count ? 'text-orange-500' : 'text-gray-300'}`}>★</span>
+  //   ));
+  // };
 
   return (
     <div className="w-full bg-[#FDF6E7] py-16">
