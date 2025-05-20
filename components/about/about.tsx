@@ -141,7 +141,7 @@ const Section: React.FC = () => {
           >
             <div className="relative aspect-square overflow-hidden rounded-2xl shadow-lg">
               <Image
-                src="/about/about-img-2.png"
+                src="/about/about-img-2.jpg"
                 alt="Illustration of secure exam systems"
                 fill
                 quality={80}
