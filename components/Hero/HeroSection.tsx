@@ -3,6 +3,7 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import VideoHoverPlayer from "./VideoHoverPlayer";
 
 const Hero: React.FC = () => {
   // Animation variants for heading and button
@@ -68,6 +69,11 @@ const Hero: React.FC = () => {
           </motion.div>
         </motion.section>
       </div>
+
+<div className="absolute bottom-10 right-10">
+<VideoHoverPlayer/>
+</div>
+     
     </main>
   );
 };

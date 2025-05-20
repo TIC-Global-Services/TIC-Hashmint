@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import React, { useState, useRef } from "react";
 
 const FAQAccordion: React.FC = () => {
@@ -43,7 +44,7 @@ const FAQAccordion: React.FC = () => {
       {/* Left side image */}
       <div className="relative w-full md:w-1/2 h-[400px] md:h-auto">
         <Image
-          src="/faq/faq.avif"
+          src="/faq/faq.jpg"
           alt="Student using tablet for exam"
           fill
           className="object-cover"
@@ -54,7 +55,20 @@ const FAQAccordion: React.FC = () => {
 
       {/* Right side FAQs */}
       <div className="w-full md:w-1/2 bg-black text-white px-6 py-10 sm:px-10 sm:py-12 md:px-12 md:py-16 flex flex-col justify-center">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-10 md:mb-12">FAQs</h2>
+
+        <div className="flex flex-row items-center justify-between  px-4 py-6 mb-10 md:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white">
+            FAQs
+          </h2>
+          <Link
+           href="/#events"
+            className="bg-yellow-500 text-white text-sm font-semibold py-2.5 px-4 rounded-full hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-500 transition-all"
+           
+          >
+            See Events
+          </Link>
+        </div>
+
 
         <div className="space-y-0">
           {faqItems.map((item, index) => (

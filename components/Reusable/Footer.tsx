@@ -4,37 +4,29 @@ import React from "react";
 
 const Footer = () => {
   const socialLinks = [
-    { name: "Instagram", url: "https://www.instagram.com/hashminthq/" },
     { name: "LinkedIn", url: "https://www.linkedin.com/company/hashminthq/" },
-    { name: "X (Twitter)", url: "https://x.com/HashMintHQ" },
   ];
 
   return (
-    <footer className="w-full px-4 sm:px-6 lg:px-8 py-8 mt-16 lg:mt-24 ">
-      <div className="relative bg-[var(--primary)] rounded-2xl overflow-hidden  mx-auto">
-        {/* Background circles - more subtle and responsive */}
+    <footer className="w-full px-4 sm:px-6 lg:px-8 py-8 mt-16 lg:mt-24">
+      <div className="relative bg-[var(--primary)] rounded-2xl overflow-hidden mx-auto">
+        {/* Decorative Circles */}
         <div className="hidden lg:block absolute -top-40 -left-20 w-[600px] h-[600px] rounded-full border-2 border-dashed border-black/80 rotate-12" />
         <div className="hidden lg:block absolute -top-60 -right-40 w-[600px] h-[600px] rounded-full border-2 border-dashed border-black/80 rotate-45" />
 
-        {/* Main content container */}
-        <div className="relative flex flex-col lg:flex-row items-end justify-between p-6 sm:p-8 lg:p-12 gap-8">
-
-          <div className=" flex flex-col items-center md:items-start">
-
-            {/* Logo */}
-            <div className="flex-shrink-0">
-              <Image
-                src="/logo.svg"
-                width={150}
-                height={150}
-                alt="Hashmint Logo"
-                className="w-32 sm:w-40 lg:w-48"
-                priority
-              />
-            </div>
-
-            {/* Social Buttons */}
-            <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
+        {/* Content Container */}
+        <div className="relative flex flex-col lg:flex-row items-start lg:items-end justify-between p-6 sm:p-8 lg:p-12 gap-10 lg:gap-20">
+          {/* Left: Logo + Socials */}
+          <div className="flex flex-col items-center lg:items-start gap-6 w-full lg:w-1/2">
+            <Image
+              src="/logo.svg"
+              width={150}
+              height={150}
+              alt="Hashmint Logo"
+              className="w-32 sm:w-40 lg:w-48"
+              priority
+            />
+            <div className="flex flex-wrap justify-center lg:justify-start gap-3 sm:gap-4">
               {socialLinks.map((social) => (
                 <Link
                   key={social.name}
@@ -54,9 +46,28 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Copyright Text */}
-          <div className="text-center lg:text-right text-white/80 text-xs sm:text-sm  font-normal font-['Poppins'] leading-relaxed ">
-            © {new Date().getFullYear()} Copyright - Hashmint | Designed & Developed by <Link href={'https://theinternetcompany.one/'} target="_blank">TIC Global</Link>
+          {/* Right: Contact + Copyright */}
+          <div className="w-full lg:w-[40%] text-white/80 text-xs sm:text-sm font-normal font-['Poppins'] leading-relaxed space-y-2 text-center lg:text-left">
+            <p>
+              <strong>Mobile:</strong> +91 9119225445
+            </p>
+            <p>
+              <strong>Email:</strong> yaswanth@hashmint.tech
+            </p>
+            <p>
+              <strong>Address:</strong> Hashmint, VO377, WeWork Prestige Cube, Site No. 26, Laskar Hosur Road, Adugodi,
+              Koramangala, Bengaluru, Karnataka 560030
+            </p>
+            <p className="">
+              © {new Date().getFullYear()} Copyright - Hashmint | Designed & Developed by{" "}
+              <Link
+                href="https://theinternetcompany.one/"
+                target="_blank"
+                className="underline hover:text-white transition"
+              >
+                TIC Global
+              </Link>
+            </p>
           </div>
         </div>
       </div>

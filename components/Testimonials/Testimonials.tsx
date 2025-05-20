@@ -144,7 +144,7 @@ const Testimonials: React.FC = () => {
           ←
         </button>
         
-        <span className="mx-4 text-sm">[ {currentPage.toString().padStart(2, '0')} / {totalSlides.toString().padStart(2, '0')} ]</span>
+        {/* <span className="mx-4 text-sm">[ {currentPage.toString().padStart(2, '0')} / {totalSlides.toString().padStart(2, '0')} ]</span> */}
         
         <button 
           onClick={() => goToSlide('next')}

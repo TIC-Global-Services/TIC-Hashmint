@@ -60,8 +60,33 @@ const Stats: React.FC = () => {
     }),
   };
 
+    // Animation variants for text and cards
+    const contentVariants = {
+      hidden: { opacity: 0, y: 20 },
+      visible: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.4, ease: "easeOut" },
+      },
+    };
+
   return (
-    <div className="flex justify-center items-center w-full  min-h-[400px] bg-gradient-to-b from-black to-gray-900 text-white px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+
+    <div className="min-h-[400px] bg-gradient-to-b from-black to-gray-900 text-white px-4 sm:px-6 lg:px-8 py-12 md:py-5">
+      <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={contentVariants}
+          className="px-8 sm:px-6  mb-8 mt-10 "
+        >
+          <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-white leading-tight">
+            The Impact of Physical & Manual Exams
+          </h2>
+        </motion.div>
+        
+    <div className="flex justify-center items-center w-full py-12">
+
       <div className="flex w-full px-4  md:px-10 justify-between gap-6 max-md:flex-col max-md:gap-8">
         {/* Stat 1 */}
         <motion.div
@@ -135,6 +160,7 @@ const Stats: React.FC = () => {
           </p>
         </motion.div>
       </div>
+    </div>
     </div>
   );
 };

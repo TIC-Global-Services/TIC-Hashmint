@@ -153,6 +153,27 @@ const Form = () => {
             </div>
           </div>
 
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="flex flex-col gap-2">
+              <label
+                htmlFor="institute"
+                className="uppercase text-xs font-semibold tracking-wide text-gray-700 pl-1"
+              >
+                Institution Name*
+              </label>
+              <input
+                id="institute"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="Institute name here"
+                className="bg-gray-100 py-2.5 px-4 text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-yellow-500 transition-all"
+                type="email"
+                required
+              />
+            </div>
+        
+          </div>
+
           {/* Message Field */}
           <div className="flex flex-col gap-2">
             <label
@@ -178,7 +199,7 @@ const Form = () => {
               className="bg-yellow-500 text-white text-sm font-semibold py-2.5 px-8 rounded-full hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-500 transition-all"
               disabled={status === "Submitting..."}
             >
-              Submit Now
+              Submit Here
             </button>
           </div>
         </form>
