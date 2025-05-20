@@ -108,7 +108,7 @@ const Testimonials: React.FC = () => {
   return (
     <div className="w-full bg-[#FDF6E7] py-16">
       <div className="text-center mb-12">
-        <h2 className="text-lg font-medium uppercase tracking-wider">TESTIMONIALS</h2>
+        <h2 className="text-lg font-medium uppercase tracking-wider">WHAT LED US TO HASHMINT EXAMS</h2>
         <h3 className="text-4xl font-bold mt-2">From Faculty - Students</h3>
       </div>
       
@@ -124,9 +124,9 @@ const Testimonials: React.FC = () => {
           {testimonialsExtended.map((testimonial, index) => (
             <div key={index} className="w-full sm:w-1/3 flex-shrink-0 px-3">
               <div className="bg-[#fff9c8] rounded-lg p-6 h-full shadow-sm">
-                <div className="mb-3 flex">
+                {/* <div className="mb-3 flex">
                   {renderStars(testimonial.stars)}
-                </div>
+                </div> */}
                 <p className="mb-4 text-sm">&ldquo;{testimonial.quote}&rdquo;</p>
                 <p className="font-bold text-sm">{testimonial.author}</p>
               </div>

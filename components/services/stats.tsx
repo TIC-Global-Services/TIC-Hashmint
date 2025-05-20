@@ -74,11 +74,10 @@ const Stats: React.FC = () => {
           aria-label="Cost savings per student on exams"
         >
           <h2 className="text-4xl sm:text-5xl font-bold text-yellow-400 max-md:text-3xl">
-            {Math.round(counts.cost)} INR
+          ₹{Math.round(counts.cost)}
           </h2>
           <p className="mt-3 text-sm sm:text-base text-white/80">
-            ₹1500 per student per year
-            is spent on printing, logistics, and storage for university exams.
+            per student per year is spent on printing, logistics, and storage for university exams.
           </p>
         </motion.div>
 
@@ -111,7 +110,7 @@ const Stats: React.FC = () => {
           aria-label="Pages printed annually across universities"
         >
           <h2 className="text-4xl sm:text-5xl font-bold text-yellow-400 max-md:text-3xl">
-            {counts.printed.toFixed(1)}b+
+            {counts.printed.toFixed(1)}B+
           </h2>
           <p className="mt-3 text-sm sm:text-base text-white/80">
             Pages printed annually across universities.
