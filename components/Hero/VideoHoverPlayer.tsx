@@ -20,7 +20,7 @@ const VideoHoverPlayer = () => {
     };
 
     return (
-            <div className="relative group  max-w-[250px] mx-auto my-8 overflow-hidden rounded-xl border-3 border-[#f9c63b] font-semibold shadow-lg transition-all duration-300 hover:shadow-[0_0_15px_1px_rgba(249,198,59,0.7)] 
+            <div className="relative group max-w-[180px]  md:max-w-[250px] mx-auto my-8 overflow-hidden rounded-xl border-3 border-[#f9c63b] font-semibold shadow-lg transition-all duration-300 hover:shadow-[0_0_15px_1px_rgba(249,198,59,0.7)] 
                    ease-in-out">
                 <video
                     ref={videoRef}

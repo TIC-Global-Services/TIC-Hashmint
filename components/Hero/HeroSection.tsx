@@ -70,7 +70,7 @@ const Hero: React.FC = () => {
         </motion.section>
       </div>
 
-<div className="absolute bottom-10 right-10">
+<div className="absolute md:bottom-10 md:right-10 -bottom-5 right-2">
 <VideoHoverPlayer/>
 </div>
      

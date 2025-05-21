@@ -81,7 +81,7 @@ const Stats: React.FC = () => {
           className="px-8 sm:px-6  mb-8 mt-10 "
         >
           <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-white leading-tight">
-            The Impact of Physical & Manual Exams
+            The Hidden Flaws of Paper-Based Testing
           </h2>
         </motion.div>
         

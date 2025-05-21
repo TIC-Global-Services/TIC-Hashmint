@@ -13,9 +13,8 @@ const Navbar: React.FC = () => {
   const NavLinks = [
     { title: "Home", slug: "/" },
     { title: "About Us", slug: "/#about-us" },
-    { title: "Features", slug: "/#features" },
     { title: "FAQ's", slug: "/#faq" },
-    { title: "Contact", slug: "/#contact" },
+    { title: "Contact", slug: "/#footer" },
   ];
 
   // Handle scroll to show/hide navbar
