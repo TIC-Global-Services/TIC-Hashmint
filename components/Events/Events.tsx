@@ -15,6 +15,11 @@ const imageList = [
 const WhiteBG = () => {
   return (
     <div id="events" className="w-full min-h-auto  bg-white py-10 px-8 mt-10">
+
+      <h1 className="text-3xl sm:text-4xl mb-10 font-semibold tracking-tight text-teal-950 uppercase max-md:mt-8">
+        Events
+      </h1>
+
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {imageList.map((src, index) => (
           <div
@@ -28,7 +33,7 @@ const WhiteBG = () => {
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 25vw"
               quality={80}
-              unoptimized 
+              unoptimized
             />
           </div>
         ))}

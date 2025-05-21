@@ -14,6 +14,7 @@ const Navbar: React.FC = () => {
     { title: "Home", slug: "/" },
     { title: "About Us", slug: "/#about-us" },
     { title: "FAQ's", slug: "/#faq" },
+    { title: "Events", slug: "/#events" },
     { title: "Contact", slug: "/#footer" },
   ];
 
