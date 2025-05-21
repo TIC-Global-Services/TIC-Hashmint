@@ -96,7 +96,7 @@ const Testimonials: React.FC = () => {
   };
 
   // Calculate current page number (for display purposes)
-  const currentPage = ((currentSlide % totalSlides) + totalSlides) % totalSlides + 1;
+  // const currentPage = ((currentSlide % totalSlides) + totalSlides) % totalSlides + 1;
 
   // Display stars based on rating
   // const renderStars = (count: number) => {

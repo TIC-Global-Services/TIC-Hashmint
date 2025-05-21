@@ -44,7 +44,7 @@ const FAQAccordion: React.FC = () => {
       {/* Left side image */}
       <div className="relative w-full md:w-1/2 h-[400px] md:h-auto">
         <Image
-          src="/faq/faq.jpg"
+          src="/faq/faq.avif"
           alt="Student using tablet for exam"
           fill
           className="object-cover"
