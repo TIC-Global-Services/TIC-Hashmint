@@ -60,13 +60,6 @@ const FAQAccordion: React.FC = () => {
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white">
             FAQs
           </h2>
-          <Link
-           href="/#events"
-            className="bg-yellow-500 text-white text-sm font-semibold py-2.5 px-4 rounded-full hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-500 transition-all"
-           
-          >
-            See Events
-          </Link>
         </div>
 
 
