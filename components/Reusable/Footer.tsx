@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <div id="footer" className="relative w-full overflow-hidden md:-mt-[750px] -mt-[150px] z-0">
       {/* Background image - Mobile - Increased height */}
-      <div className="relative w-full h-[750px] md:h-full md:hidden block">
+      <div className="relative w-full h-[800px] md:h-full md:hidden block">
         <Image src="/FooterImg.png" alt="Footer Wave" fill className="pointer-events-none select-none object-cover" />
       </div>
 
