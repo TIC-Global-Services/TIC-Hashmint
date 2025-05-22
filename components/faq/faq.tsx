@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import React, { useState, useRef } from "react";
 
 const FAQAccordion: React.FC = () => {
