@@ -9,13 +9,13 @@ const Services: React.FC = () => {
   const FirstFeatures = [
     {
       id: 1,
-      imageUrl: "/services/services-card-img-1.avif",
+      imageUrl: "/services/service-robust.jpg",
       title: "Robust & Secure",
       description: "Designed to support high-stakes assessments",
     },
     {
       id: 2,
-      imageUrl: "/services/services-card-img-2.avif",
+      imageUrl: "/services/service-biometric.jpg",
       title: "Biometric Authentication",
       description: "Providing secure, personalized access",
     },
