@@ -25,7 +25,7 @@ const Hero: React.FC = () => {
         className="fixed right-0 top-2/3 -translate-y-1/2 bg-[var(--primary)] text-[var(--foreground)] py-6 px-2 flex flex-col items-center justify-center cursor-pointer rounded-l-lg shadow-lg z-50 w-auto" // Added z-50 to ensure it's above other content
       >
         <span className="[writing-mode:vertical-rl] rotate-180 text-sm font-semibold">
-          Download Brochure
+          Download&#160;Brochure
         </span>
       </Link>
       {/* Background Image with Overlay */}

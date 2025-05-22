@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import NavBar from "@/components/Reusable/NavBar";
 import Footer from "@/components/Reusable/Footer";
-
+import FooterWave from "@/components/Reusable/FooterWave";
 
 export const metadata: Metadata = {
   title: "Hashmint",
@@ -16,12 +16,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-
-      <body>
+      <body className="relative overflow-x-hidden">
         <NavBar />
-       
         {children}
-        <Footer />
+        <FooterWave />
+        {/* <Footer /> */}
       </body>
     </html>
   );

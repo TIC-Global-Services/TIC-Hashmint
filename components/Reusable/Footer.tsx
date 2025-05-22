@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import FooterImg from "@/public/FooterImg.png"
 
 const Footer = () => {
   const socialLinks = [
@@ -8,7 +9,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer id="footer" className="w-full px-4 sm:px-6 lg:px-8 py-8 mt-16 lg:mt-24">
+    <footer id="footer" className="w-full px-4 sm:px-6 lg:px-8 py-8 mt-16 lg:mt-24" style={{backgroundImage:""}}>
       <div className="relative bg-[var(--primary)] rounded-2xl overflow-hidden mx-auto">
         {/* Decorative Circles */}
         <div className="hidden lg:block absolute -top-40 -left-20 w-[600px] h-[600px] rounded-full border-2 border-dashed border-black/80 rotate-12" />

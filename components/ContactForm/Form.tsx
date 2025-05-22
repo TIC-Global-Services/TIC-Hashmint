@@ -57,7 +57,7 @@ const Form = () => {
   };
 
   return (
-    <section id="contact" className="relative mx-7 rounded-xl my-10 max-w-[96vw] overflow-hidden">
+    <section id="contact" className="relative z-10 mx-7 rounded-xl my-10 max-w-[96vw] overflow-hidden bg-white">
       <Toaster richColors  position="top-center" />
       {/* Main background forest image */}
       <div className="absolute inset-0 hidden md:block">
