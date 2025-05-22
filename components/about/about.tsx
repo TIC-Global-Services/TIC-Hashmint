@@ -146,10 +146,10 @@ const Section: React.FC = () => {
         <div
           className={`absolute text-white max-w-2xl ${isMobile ? "top-8 left-4 right-4" : "left-6 sm:left-12 bottom-16"}`}
         >
-          <h2 className="md:text-4xl text-2xl font-light leading-tight">
-            Paper-smooth, exam-ready, and 
-            <br className="hidden md:block" />
-            powered to last — all day, all the way.
+          <h2 className="md:text-4xl text-2xl font-light leading-tight max-w-[80%]">
+            Paper-smooth, exam-ready, and powered to last — all day, all the way.
+            {/* <br className="hidden md:block" /> */}
+             
           </h2>
         </div>
 

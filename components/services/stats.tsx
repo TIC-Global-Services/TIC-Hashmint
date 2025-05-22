@@ -72,7 +72,7 @@ const Stats: React.FC = () => {
 
   return (
 
-    <div className="min-h-[400px] bg-gradient-to-b from-black to-gray-900 text-white px-4 sm:px-6 lg:px-8 py-12 md:py-5">
+    <div className="min-h-[400px] my-[80px] bg-gradient-to-b from-black to-gray-900 text-white px-4 sm:px-6 lg:px-8 py-12 md:py-5">
       <motion.div
           initial="hidden"
           whileInView="visible"
@@ -120,7 +120,7 @@ const Stats: React.FC = () => {
             {Math.round(counts.pages)}M+
           </h2>
           <p className="mt-3 text-sm sm:text-base text-white/80">
-            Exam pages are wasted every year.
+            Exam pages are wasted <br className="md:block hidden"/>every year.
           </p>
         </motion.div>
 
