@@ -149,7 +149,6 @@ const Section: React.FC = () => {
           <h2 className="md:text-4xl text-2xl font-light leading-tight max-w-[80%]">
             Paper-smooth, exam-ready, and powered to last — all day, all the way.
             {/* <br className="hidden md:block" /> */}
-             
           </h2>
         </div>
 
@@ -170,11 +169,11 @@ const Section: React.FC = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <div className="bg-white/20 backdrop-blur-sm rounded-full w-12 h-12 flex items-center justify-center mb-4">
+              <div className="bg-white/20 backdrop-blur-sm rounded-full w-10 h-10 flex items-center justify-center md:mb-4 mb-1">
                 {feature.icon}
               </div>
-              <h3 className="text-lg font-medium mb-2 text-white">{feature.title}</h3>
-              <p className="text-sm text-white/90">{feature.description}</p>
+              <h3 className="md:text-lg text-base font-medium md:mb-2 mb-1 text-white">{feature.title}</h3>
+              <p className="md:text-sm text-xs text-white/90">{feature.description}</p>
             </motion.div>
           ))}
         </div>
