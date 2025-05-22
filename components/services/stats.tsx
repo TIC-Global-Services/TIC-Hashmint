@@ -78,7 +78,7 @@ const Stats: React.FC = () => {
           whileInView="visible"
           viewport={{ once: true }}
           variants={contentVariants}
-          className="px-8 sm:px-6  mb-8 mt-10 "
+          className="px-4 md:px-8 sm:px-6  mb-8 mt-10 "
         >
           <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-white leading-tight">
             The Hidden Flaws of Paper-Based Testing

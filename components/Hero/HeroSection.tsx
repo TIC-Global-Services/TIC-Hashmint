@@ -31,7 +31,7 @@ const Hero: React.FC = () => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <Image
-          src="/hero/HERO.avif"
+          src="/hero/Banner.png"
           alt="Students in a classroom using tablets for paperless exams"
           fill
           priority
