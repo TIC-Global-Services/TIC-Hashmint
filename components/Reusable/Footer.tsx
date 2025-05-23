@@ -43,7 +43,7 @@ const Footer = () => {
                             </div>
                             <div className="md:flex flex-col items-center md:items-start hidden">
                                 <a 
-                                    href="https://www.linkedin.com/company/hashmint" 
+                                    href="https://www.linkedin.com/company/hashminthq/" 
                                     target="_blank" 
                                     rel="noopener noreferrer" 
                                     className="mb-3 flex items-center gap-2 bg-gray-100 hover:bg-blue-100 rounded-full px-4 py-2 transition-colors duration-300"
@@ -77,7 +77,7 @@ const Footer = () => {
                 {/* Mobile copyright - Adjusted positioning */}
                 <div className="text-sm md:text-base text-gray-600 text-center md:hidden pb-8 flex flex-col justify-center">
                     <a 
-                        href="https://www.linkedin.com/company/hashmint" 
+                        href="https://www.linkedin.com/company/hashminthq/" 
                         target="_blank" 
                         rel="noopener noreferrer" 
                         className="mb-3 flex items-center gap-2 bg-gray-100 hover:bg-blue-100 rounded-full px-4 py-2 transition-colors duration-300 mx-auto"
