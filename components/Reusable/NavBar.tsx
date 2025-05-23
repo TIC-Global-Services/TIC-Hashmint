@@ -15,19 +15,18 @@ const Navbar: React.FC = () => {
     { title: "About Us", slug: "/#about-us" },
     { title: "FAQ's", slug: "/#faq" },
     { title: "Events", slug: "/#events" },
-    { title: "Contact", slug: "/#footer" },
+    { title: "Contact", slug: "#" }, // handled manually
   ];
 
-  // Handle scroll to show/hide navbar
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       if (currentScrollY <= 0) {
-        setIsVisible(true); // Show at top
+        setIsVisible(true);
       } else if (currentScrollY > lastScrollY) {
-        setIsVisible(false); // Hide on scroll down
+        setIsVisible(false);
       } else {
-        setIsVisible(true); // Show on scroll up
+        setIsVisible(true);
       }
       setLastScrollY(currentScrollY);
     };
@@ -36,19 +35,28 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
-  // Framer Motion variants for navbar
+  const scrollToBottom = () => {
+    const scrollTarget =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
+  
+    window.scrollTo({
+      top: scrollTarget,
+      behavior: "smooth",
+    });
+  };
+  
+
   const navbarVariants = {
     visible: { y: 0, opacity: 1 },
     hidden: { y: -100, opacity: 0 },
   };
 
-  // Framer Motion variants for mobile menu container
   const menuContainerVariants = {
     open: { opacity: 1 },
     closed: { opacity: 0 },
   };
 
-  // Framer Motion variants for individual menu items
   const menuItemVariants = {
     open: (i: number) => ({
       opacity: 1,
@@ -77,7 +85,7 @@ const Navbar: React.FC = () => {
         variants={navbarVariants}
         transition={{ duration: 0.3, ease: "easeInOut" }}
       >
-        <div className=" w-[90%] mx-auto bg-white/80 bg-clip-padding backdrop-filter backdrop-blur-sm  backdrop-saturate-100 backdrop-contrast-100 rounded-full mt-2  px-4 sm:px-6 lg:px-8">
+        <div className="w-[90%] mx-auto bg-white/80 bg-clip-padding backdrop-filter backdrop-blur-sm backdrop-saturate-100 backdrop-contrast-100 rounded-full mt-2 px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <Link href="/" className="flex-shrink-0">
@@ -93,21 +101,34 @@ const Navbar: React.FC = () => {
 
             {/* Desktop Nav Links */}
             <div className="hidden md:flex items-center space-x-8">
-              {NavLinks.map((link) => (
-                <Link
-                  key={link.title}
-                  href={link.slug}
-                  className="text-sm font-bold text-gray-800 hover:text-gray-600 transition-colors focus:outline-none"
-                  role="menuitem"
-                >
-                  {link.title}
-                </Link>
-              ))}
+              {NavLinks.map((link) =>
+                link.title === "Contact" ? (
+                  <button
+                    key={link.title}
+                    onClick={scrollToBottom}
+                    className="text-sm font-bold text-gray-800 hover:text-gray-600 transition-colors focus:outline-none"
+                  >
+                    {link.title}
+                  </button>
+                ) : (
+                  <Link
+                    key={link.title}
+                    href={link.slug}
+                    className="text-sm font-bold text-gray-800 hover:text-gray-600 transition-colors focus:outline-none"
+                    role="menuitem"
+                  >
+                    {link.title}
+                  </Link>
+                )
+              )}
             </div>
 
             {/* Desktop Button */}
             <div className="hidden md:block">
-              <PrimaryLinkButton href="/#contact" className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-6 rounded-full">
+              <PrimaryLinkButton
+                href="/#contact"
+                className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-6 rounded-full"
+              >
                 Book A Demo
               </PrimaryLinkButton>
             </div>
@@ -141,31 +162,54 @@ const Navbar: React.FC = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="md:hidden bg-white/80 bg-clip-padding backdrop-filter backdrop-blur-sm  backdrop-saturate-100 backdrop-contrast-100 w-[90%] mx-auto rounded-3xl mt-2"
+            className="md:hidden bg-white/80 bg-clip-padding backdrop-filter backdrop-blur-sm backdrop-saturate-100 backdrop-contrast-100 w-[90%] mx-auto rounded-3xl mt-2"
             initial="closed"
             animate="open"
             exit="closed"
             variants={menuContainerVariants}
           >
             <div className="px-2 py-3 space-y-1 sm:px-3">
-              {NavLinks.map((link, index) => (
-                <motion.div
-                  key={link.title}
-                  custom={index}
-                  variants={menuItemVariants}
-                  initial="closed"
-                  animate="open"
-                  exit="closed"
-                >
-                  <Link
-                    href={link.slug}
-                    className="block px-3 py-2 text-base font-bold text-gray-800 hover:text-gray-600 hover:bg-gray-100 rounded-md"
-                    onClick={() => setIsOpen(false)}
+              {NavLinks.map((link, index) =>
+                link.title === "Contact" ? (
+                  <motion.div
+                    key={link.title}
+                    custom={index}
+                    variants={menuItemVariants}
+                    initial="closed"
+                    animate="open"
+                    exit="closed"
+                    className="cursor-pointer"
                   >
-                    {link.title}
-                  </Link>
-                </motion.div>
-              ))}
+                    <button
+                      onClick={() => {
+                        scrollToBottom();
+                        setIsOpen(false);
+                      }}
+                      className="block cursor-pointer w-full text-left px-3 py-2 text-base font-bold text-gray-800 hover:text-gray-600 hover:bg-gray-100 rounded-md"
+                    >
+                      {link.title}
+                    </button>
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key={link.title}
+                    custom={index}
+                    variants={menuItemVariants}
+                    initial="closed"
+                    animate="open"
+                    exit="closed"
+                  >
+                    <Link
+                      href={link.slug}
+                      className="block px-3 py-2 text-base font-bold text-gray-800 hover:text-gray-600 hover:bg-gray-100 rounded-md"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {link.title}
+                    </Link>
+                  </motion.div>
+                )
+              )}
+
               <motion.div
                 custom={NavLinks.length}
                 variants={menuItemVariants}

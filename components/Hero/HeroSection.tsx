@@ -70,9 +70,9 @@ const Hero: React.FC = () => {
         </motion.section>
       </div>
 
-<div className="absolute md:bottom-3 2xl:bottom-10 md:right-10 -bottom-5 right-2">
+<Link href="https://youtu.be/zLs11J06_jc?feature=shared" className="absolute md:bottom-3 2xl:bottom-10 md:right-10 -bottom-5 right-2">
 <VideoHoverPlayer/>
-</div>
+</Link>
      
     </main>
   );

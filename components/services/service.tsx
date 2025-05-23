@@ -30,7 +30,7 @@ const Services: React.FC = () => {
   const bottomFeatures = [
     {
       id: 5,
-      imageUrl: "/services/services-card-img-5.avif",
+      imageUrl: "/services/services-card-img-5.jpg",
       title: "Docking and Charging Stations",
       description: "Effortless recharging and setup",
     },

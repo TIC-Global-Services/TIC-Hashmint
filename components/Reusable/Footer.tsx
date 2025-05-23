@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <div id="footer" className="relative w-full overflow-hidden md:-mt-[750px] -mt-[150px] z-0">
       {/* Background image - Mobile - Increased height */}
-      <div className="relative w-full h-[800px] md:h-full md:hidden block">
+      <div className="relative w-full h-[750px] md:h-full md:hidden block">
         <Image src="/FooterImg.png" alt="Footer Wave" fill className="pointer-events-none select-none object-cover" />
       </div>
 
@@ -46,7 +46,7 @@ const Footer = () => {
             </div>
 
             {/* Right column - Map - Fixed consistent spacing */}
-            <div className="2xl:w-1/2 md:w-[45%] h-[250px] md:h-[300px] 2xl:h-[350px] rounded-lg overflow-hidden shadow-lg md:mr-0">
+            <div className="2xl:w-1/2 md:w-[45%] h-[200px] md:h-[300px] 2xl:h-[350px] rounded-lg overflow-hidden shadow-lg md:mr-0">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2961.984870341143!2d77.610998!3d12.9363301!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae153a4579f8e5%3A0xe03c80840fd742d7!2sWeWork%20Prestige%20Cube!5e1!3m2!1sen!2sin!4v1747931897993!5m2!1sen!2sin"
                 width="100%"
